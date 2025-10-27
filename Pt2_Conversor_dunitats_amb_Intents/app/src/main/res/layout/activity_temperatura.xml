@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/temperatura_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".TemperaturaActivity">
+
+    <EditText
+        android:id="@+id/etValorEntradaTemperatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_valor_a_convertir_temp"
+        android:inputType="numberSigned|numberDecimal"
+        android:autofillHints="false"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/selecciona_unitat_origen_temp" />
+
+    <RadioGroup
+        android:id="@+id/rgUnitatOrigenTemperatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbCelsiusOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/celsius_c" />
+
+        <RadioButton
+            android:id="@+id/rbFahrenheitOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fahrenheit_f" />
+
+        <RadioButton
+            android:id="@+id/rbKelvinOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kelvin_k" />
+
+        <RadioButton
+            android:id="@+id/rbRankineOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rankine_r" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/selecciona_unitat_desti_temp" />
+
+    <RadioGroup
+        android:id="@+id/rgUnitatDestiTemperatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbCelsiusDesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/celsius_c" />
+
+        <RadioButton
+            android:id="@+id/rbFahrenheitDesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fahrenheit_f" />
+
+        <RadioButton
+            android:id="@+id/rbKelvinDesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kelvin_k" />
+        <RadioButton
+            android:id="@+id/rbRankineDesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rankine_r" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConvertirTemperatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="@string/convertir" />
+
+    <TextView
+        android:id="@+id/tvResultatTemperatura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Resultat: 30 °C" />
+
+</LinearLayout>

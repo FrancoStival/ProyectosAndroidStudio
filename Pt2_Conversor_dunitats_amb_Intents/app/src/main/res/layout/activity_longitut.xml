@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/longitut_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".LongitutActivity">
+
+    <EditText
+        android:id="@+id/etValorEntradaLongitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_valor_a_convertir"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/selecciona_unitat_origen" />
+
+    <RadioGroup
+        android:id="@+id/rgUnitatOrigenLongitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbKmOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quilometre_km" />
+
+        <RadioButton
+            android:id="@+id/rbMillaOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/milla_mi" />
+
+        <RadioButton
+            android:id="@+id/rbIardaOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iarda_yd" />
+
+        <RadioButton
+            android:id="@+id/rbPolzadaOrigen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/polzada_in" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/selecciona_unitat_desti" />
+
+    <RadioGroup
+        android:id="@+id/rgUnitatDestiLongitud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbKmDesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quilometre_km" />
+
+        <RadioButton
+            android:id="@+id/rbMillaDesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/milla_mi" />
+
+        <RadioButton
+            android:id="@+id/rbIardaDesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iarda_yd" />
+
+        <RadioButton
+            android:id="@+id/rbPolzadaDesti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/polzada_in" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConvertirLongitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="@string/convertir" />
+
+    <TextView
+        android:id="@+id/tvResultatLongitud"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Resultat: 10 Km" />
+
+</LinearLayout>

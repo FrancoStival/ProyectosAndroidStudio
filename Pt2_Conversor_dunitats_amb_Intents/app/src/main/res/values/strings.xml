@@ -1,0 +1,58 @@
+<resources>
+    <!-- Catalan -->
+    <string name="app_name">Conversor Unitats</string>
+
+    <string name="temperatura_button_text">Temperatura</string>
+    <string name="longitud_button_text">Longitud</string>
+    <string name="massa_button_text">Massa</string>
+
+    <string name="hint_valor_a_convertir">Introdueix valor</string>
+    <string name="selecciona_unitat_origen">Unitat d\'origen:</string>
+    <string name="selecciona_unitat_desti">Unitat de destí:</string>
+    <string name="convertir">Convertir</string>
+    <string name="resultat_prefix">Resultat:</string>
+
+    <string name="longitut_activity_title">Conversor de Longitud</string>
+    <string name="quilometre_km">Quilòmetre (Km)</string>
+    <string name="milla_mi">Milla (mi)</string>
+    <string name="iarda_yd">Iarda (yd)</string>
+    <string name="polzada_in">Polzada (in)</string>
+
+
+    <string name="massa_activity_title">Conversor de Massa</string>
+    <string name="hint_valor_a_convertir_massa">Introdueix massa</string>
+    <string name="selecciona_unitat_origen_massa">Unitat de massa d\'origen:</string>
+    <string name="selecciona_unitat_desti_massa">Unitat de massa de destí:</string>
+    <string name="kilogram_kg">Kilogram (Kg)</string>
+    <string name="lliura_lb">Lliura (lb)</string>
+    <string name="unca_oz">Unça (oz)</string>
+    <string name="stone_st">Stone (st)</string>
+
+    <string name="temperatura_activity_title">Conversor de Temperatura</string>
+    <string name="hint_valor_a_convertir_temp">Introdueix temperatura</string>
+    <string name="selecciona_unitat_origen_temp">Unitat de temp. d\'origen:</string>
+    <string name="selecciona_unitat_desti_temp">Unitat de temp. de destí:</string>
+    <string name="celsius_c">Celsius (°C)</string>
+    <string name="fahrenheit_f">Fahrenheit (°F)</string>
+    <string name="kelvin_k">Kelvin (K)</string>
+    <string name="rankine_r">Rankine (°R)</string>
+
+    <string name="error_valor_requerit">Aquest camp és obligatori</string>
+    <string name="error_valor_invalid">Valor numèric invàlid</string>
+    <string name="error_selecciona_unitats">Selecciona les unitats d\'origen i destí</string>
+    <string name="error_conversio_no_implementada">Conversió no implementada</string>
+    <string name="simbol_km">Km</string>
+    <string name="simbol_mi">mi</string>
+    <string name="simbol_yd">yd</string>
+    <string name="simbol_in_unit">in</string>
+    <string name="simbol_kg">Kg</string>
+    <string name="simbol_lb">lb</string>
+    <string name="simbol_oz">oz</string>
+    <string name="simbol_st">st</string>
+    <string name="simbol_celsius">°C</string>
+    <string name="simbol_fahrenheit">°F</string>
+    <string name="simbol_kelvin">K</string>
+    <string name="simbol_rankine">°R</string>
+
+
+</resources>

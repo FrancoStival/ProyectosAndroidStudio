@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/massa_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MassaActivity">
+
+    <EditText
+        android:id="@+id/etValorEntradaMassa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_valor_a_convertir_massa"
+        android:inputType="numberDecimal"
+        android:autofillHints="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/selecciona_unitat_origen_massa" />
+
+    <RadioGroup
+        android:id="@+id/rgUnitatOrigenMassa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbKgOrigenMassa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kilogram_kg" />
+
+        <RadioButton
+            android:id="@+id/rbLliuraOrigenMassa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lliura_lb" />
+
+        <RadioButton
+            android:id="@+id/rbUncaOrigenMassa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unca_oz" />
+
+        <RadioButton
+            android:id="@+id/rbStoneOrigenMassa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stone_st" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/selecciona_unitat_desti_massa" />
+
+    <RadioGroup
+        android:id="@+id/rgUnitatDestiMassa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbKgDestiMassa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kilogram_kg" />
+
+        <RadioButton
+            android:id="@+id/rbLliuraDestiMassa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lliura_lb" />
+
+        <RadioButton
+            android:id="@+id/rbUncaDestiMassa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unca_oz" />
+
+        <RadioButton
+            android:id="@+id/rbStoneDestiMassa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stone_st" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnConvertirMassa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:text="@string/convertir" />
+
+    <TextView
+        android:id="@+id/tvResultatMassa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Resultado" />
+</LinearLayout>
