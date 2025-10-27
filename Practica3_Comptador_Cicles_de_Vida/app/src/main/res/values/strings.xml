@@ -1,0 +1,9 @@
+<resources><string name="app_name">Pt3_Comptador_de_cicles_de_vida</string>
+        <string name="on_create_text">onCreate() → s’ha executat %1$d cops</string>
+        <string name="on_start_text">onStart() → s’ha executat %1$d cops</string>
+        <string name="on_restart_text">onRestart() → s’ha executat %1$d cops</string>
+        <string name="on_resume_text">onResume() → s’ha executat %1$d cops</string>
+        <string name="on_pause_text">onPause() → s’ha executat %1$d cops</string>
+        <string name="on_stop_text">onStop() → s’ha executat %1$d cops</string>
+        <string name="on_destroy_text">onDestroy() → s’ha executat %1$d cops</string>
+</resources>
