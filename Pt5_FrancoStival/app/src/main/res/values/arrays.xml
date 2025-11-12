@@ -1,0 +1,34 @@
+<resources>
+    <string-array name="races_labels">
+        <item>Ewok</item><item>Gen\'Dai</item><item>Genosià</item><item>Gorax</item>
+        <item>Gungan</item><item>Hutt</item><item>Jawa</item><item>Kel tor</item>
+        <item>Mandalorians</item><item>Massiff</item><item>Mon Calamari</item>
+        <item>Moradors de les sorres</item><item>Neimoidians</item><item>Porg</item>
+        <item>Quarren</item><item>Rakatan</item><item>Rancor</item><item>Teek</item>
+        <item>Sarlacc</item><item>Tauntaun</item><item>Ugnaught</item><item>Wampa</item>
+        <item>Weequay</item><item>Wookiee</item><item>Yuuzhan vong</item><item>Yuzzum</item>
+        <item>Zabrak</item>
+    </string-array>
+
+    <string-array name="races_values">
+        <item>ewok</item><item>gendai</item><item>genosian</item><item>gorax</item>
+        <item>gungan</item><item>hutt</item><item>jawa</item><item>kel_tor</item>
+        <item>mandalorian</item><item>massiff</item><item>mon_calamari</item>
+        <item>sand_people</item><item>neimoidian</item><item>porg</item>
+        <item>quarren</item><item>rakatan</item><item>rancor</item><item>teek</item>
+        <item>sarlacc</item><item>tauntaun</item><item>ugnaut</item><item>wampa</item>
+        <item>weequay</item><item>wookiee</item><item>yuuzhan_vong</item><item>yuzzum</item>
+        <item>zabrak</item>
+    </string-array>
+
+    <string-array name="movies_labels">
+        <item>Una Nova Esperança</item><item>El Imperi Contraataca</item><item>El Retorn del Jedi</item>
+        <item>Ataque dels Clons</item><item>La Venjança dels Sith</item><item>El Despertar de la Força</item>
+        <item>Els Últims Jedi</item><item>El Ascens de Skywalker</item>
+    </string-array>
+    <string-array name="movies_values">
+        <item>ANH</item><item>ESB</item><item>ROTJ</item>
+        <item>AOTC</item><item>ROTS</item><item>TFA</item>
+        <item>TlJ</item><item>TRS</item>
+    </string-array>
+</resources>
