@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Prova1_Stival_Franco</string>
+    <string name="plataformes">Plataformes</string>
+    <string name="jocs">Jocs</string>
+    <string name="noInternet">No hi ha connexió</string>
+    <string name="id">ID:</string>
+    <string name="name">Nombre:</string>
+    <string name="slug">Slug:</string>
+    <string name="released">Released:</string>
+    <string name="rating">Rating: </string>
+
+
+</resources>
