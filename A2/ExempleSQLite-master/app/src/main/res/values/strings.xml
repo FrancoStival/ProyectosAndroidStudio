@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ExempleSqlite</string>
+    <string name="nom">Nom: </string>
+    <string name="adress">Empresa: </string>
+    <string name="insert">Afegir</string>
+    <string name="show">Mostrar</string>
+    <string name="si">Si</string>
+    <string name="no">No </string>
+    <string name="borrar">Segur que voleu esborrar?</string>
+</resources>
