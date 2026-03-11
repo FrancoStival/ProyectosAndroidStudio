@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "392639767745",
+    "project_id": "android-df6ab",
+    "storage_bucket": "android-df6ab.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392639767745:android:4dfbcc6b9b9affb1e0e040",
+        "android_client_info": {
+          "package_name": "com.example.firebasedemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6vQXy3etezQO4it406k6f3qfDaE65fe4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
