@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">FirebaseDemo</string>
+    <string name="app_name">Pt10_Notificacions</string>
+    <string name="go_register">Anar a Registre</string>
+    <string name="go_subscription">Anar a Subscripció</string>
+    <string name="registering">Registrant dispositiu...</string>
+    <string name="registration_success">Registrat correctament!</string>
+    <string name="registration_failed">Error al registrar</string>
+    <string name="subscribe_title">Subscriure\'s a un grup</string>
+    <string name="add_button">Afegir</string>
+    <string name="subscription_success">Subscrit a: %s</string>
+    <string name="subscription_failed">Error al subscriure\'s a %s</string>
 </resources>
