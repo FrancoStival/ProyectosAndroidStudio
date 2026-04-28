@@ -19,20 +19,19 @@ public class Droplet extends Image {
      */
     public Droplet(Texture texture) {
         super(texture);
-        setPosition(MathUtils.random(0, 800-64), 480-64);
+        setPosition(MathUtils.random(0, 800-64), 480);
         setSize(64, 64);
     }
 
 
     /**
-     * Si la seva posició arriba a la part inferior de la pantalla, s'elimina
+     * Eliminem la lògica de auto-eliminació d'aquí per gestionar-la des del Handler
+     * i així poder reproduir el so correctament.
      * @param delta
      */
     @Override
     public void act(float delta) {
         super.act(delta);
-        if ( getY() == 0 )
-            getParent().removeActor(this);
     }
 
     /**

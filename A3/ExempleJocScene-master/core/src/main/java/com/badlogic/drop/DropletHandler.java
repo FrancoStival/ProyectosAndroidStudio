@@ -6,79 +6,76 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.utils.SnapshotArray;
 import com.badlogic.gdx.utils.TimeUtils;
 
-import java.util.Iterator;
-
-/**
- * Gestiona les gotes que van apareixent, caient i desapareixent. És un grup d'actors que
- * contindrà les gotes com a actors
- */
 public class DropletHandler extends Group {
-    private long lastDropletTime; // Temps en què s'h generat la darrera gota
-    private final long DROPLET_TIME_INTERVAL = 1000000000; // Interval que transcorre entre gotes
-    // La imatge de la gota
+    private long lastDropletTime;
+    private long currentInterval = 1000000000L;
+    private float fallDuration = 2.0f;
     private final Texture texture;
-    // El so que fa quan es recull una gota amb la galleda
-    private final Sound dropSound;
+    private final Sound bonkSound;
+    private final Sound explosionSound;
 
-    /**
-     * El constructor genera la primera gota i guarda l'instant de temps
-     */
     public DropletHandler(AssetManager assetManager) {
-        texture = assetManager.get(AssetDescriptors.dropletTexture);
-        dropSound = assetManager.get(AssetDescriptors.dropSound);
-        lastDropletTime = TimeUtils.nanoTime();
-        spawnDroplet();
-
+        this.texture = assetManager.get(AssetDescriptors.dropletTexture);
+        this.bonkSound = assetManager.get(AssetDescriptors.bonkSound);
+        this.explosionSound = assetManager.get(AssetDescriptors.explosionSound);
+        this.lastDropletTime = TimeUtils.nanoTime();
     }
 
-    /**
-     * Crea una gota si és necessari
-     * @param delta
-     */
     @Override
     public void act(float delta) {
         super.act(delta);
         spawnDroplet();
+
+        if (fallDuration > 0.6f) {
+            fallDuration -= 0.02f * delta;
+        }
+        if (currentInterval > 300000000L) {
+            currentInterval -= 5000000L * delta;
+        }
+
+        SnapshotArray<Actor> children = getChildren();
+        Actor[] items = children.begin();
+        for (int i = 0, n = children.size; i < n; i++) {
+            Actor actor = items[i];
+            if (actor instanceof Droplet) {
+                Droplet droplet = (Droplet) actor;
+                if (droplet.getY() <= 0.1f) {
+                    if (bonkSound != null) bonkSound.play();
+                    droplet.remove();
+                }
+            }
+        }
+        children.end();
     }
 
-    /**
-     * Comprova el tems transcorregut des de la darrera gota generada i si supera l'interval estblert
-     * se'n genera una altra
-     */
     private void spawnDroplet() {
-        if ( TimeUtils.nanoTime() - lastDropletTime > DROPLET_TIME_INTERVAL ){
+        if (TimeUtils.nanoTime() - lastDropletTime > currentInterval) {
             lastDropletTime = TimeUtils.nanoTime();
             Droplet droplet = new Droplet(texture);
-            // Afegim a la gota l'acció de desplaçar-se fins la part inferior de la pantalla
-            // en dos segons
-            droplet.addAction(Actions.moveTo(droplet.getX(), 0,2));
-            //Afegim la gota  la llista d'actors del grup
+            droplet.addAction(Actions.moveTo(droplet.getX(), 0, fallDuration));
             addActor(droplet);
         }
     }
 
-    /**
-     * Comprova si alguna de les gotes ha col·lidit amb el personatge
-     * @param bucket el personatge (cubell)
-     * @return el nombre de col·lisions detectades
-     */
     public int checkCollisions(Bucket bucket) {
         int collisions = 0;
-
-        // Use the iterator's remove method to avoid ConcurrentModificationException
-        Iterator<Actor> it = getChildren().iterator();
-
-        while (it.hasNext()) {
-            Droplet droplet = (Droplet) it.next();
-            if (droplet.inBucket(bucket)) {
-                it.remove(); // Safer removal
-                collisions++;
-                dropSound.play();
+        SnapshotArray<Actor> children = getChildren();
+        Actor[] items = children.begin();
+        for (int i = 0, n = children.size; i < n; i++) {
+            Actor actor = items[i];
+            if (actor instanceof Droplet) {
+                Droplet droplet = (Droplet) actor;
+                if (droplet.inBucket(bucket)) {
+                    if (explosionSound != null) explosionSound.play();
+                    droplet.remove();
+                    collisions++;
+                }
             }
         }
+        children.end();
         return collisions;
     }
-
 }

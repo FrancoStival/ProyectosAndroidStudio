@@ -2,19 +2,22 @@ package com.badlogic.drop;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class MainMenuScreen implements Screen {
     private final Drop game;
     private Stage stage;
+    private Texture backgroundTexture;
 
     public MainMenuScreen(final Drop game) {
         this.game = game;
@@ -25,26 +28,38 @@ public class MainMenuScreen implements Screen {
         stage = new Stage(new FitViewport(800, 480));
         Gdx.input.setInputProcessor(stage);
 
+        backgroundTexture = new Texture(Gdx.files.internal("background.png"));
+        Image background = new Image(backgroundTexture);
+        background.setSize(800, 480);
+        stage.addActor(background);
+
         Table table = new Table();
         table.setFillParent(true);
         stage.addActor(table);
 
-        // Normally we'd use a skin, but for simplicity we'll just use the default font
-        Label.LabelStyle labelStyle = new Label.LabelStyle(game.font, com.badlogic.gdx.graphics.Color.WHITE);
+        Label.LabelStyle labelStyle = new Label.LabelStyle(game.customFont, Color.WHITE);
 
-        Label titleLabel = new Label("Welcome to Dodge Drop!!!", labelStyle);
-        Label instructionLabel = new Label("Avoid the drops! You have 3 lives.", labelStyle);
+        Label titleLabel = new Label("DODGE THE SLIMES!!!", labelStyle);
+        titleLabel.setFontScale(1.8f);
+        titleLabel.setAlignment(Align.center);
+
+        Label instructionLabel = new Label("Avoid the enemies!\nYou have 3 lives.", labelStyle);
+        instructionLabel.setFontScale(1.0f);
+        instructionLabel.setAlignment(Align.center);
+
         Label startLabel = new Label("Tap anywhere to START", labelStyle);
+        startLabel.setFontScale(1.2f);
+        startLabel.setColor(Color.YELLOW);
+        startLabel.setAlignment(Align.center);
 
         table.add(titleLabel).padBottom(20).row();
-        table.add(instructionLabel).padBottom(50).row();
+        table.add(instructionLabel).padBottom(40).row();
         table.add(startLabel);
 
         stage.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 game.setScreen(new GameScreen(game));
-                dispose();
             }
         });
     }
@@ -70,10 +85,13 @@ public class MainMenuScreen implements Screen {
     public void resume() {}
 
     @Override
-    public void hide() {}
+    public void hide() {
+        dispose();
+    }
 
     @Override
     public void dispose() {
         stage.dispose();
+        if (backgroundTexture != null) backgroundTexture.dispose();
     }
 }

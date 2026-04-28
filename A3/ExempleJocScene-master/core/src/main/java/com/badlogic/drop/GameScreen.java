@@ -112,6 +112,8 @@ public class GameScreen implements Screen {
         assetManager.load(AssetDescriptors.background);
         assetManager.load(AssetDescriptors.dropSound);
         assetManager.load(AssetDescriptors.rainMusic);
+        assetManager.load(AssetDescriptors.bonkSound);
+        assetManager.load(AssetDescriptors.explosionSound);
     }
 
     @Override

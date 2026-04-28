@@ -13,4 +13,6 @@ public class AssetDescriptors {
     public static final AssetDescriptor<Texture> background = new AssetDescriptor("background.png", Texture.class);
     public static final AssetDescriptor<Music> rainMusic = new AssetDescriptor("music.mp3", Music.class);
     public static final AssetDescriptor<Sound> dropSound = new AssetDescriptor("drop.mp3", Sound.class);
+    public static final AssetDescriptor<Sound> bonkSound = new AssetDescriptor("Bonk.wav", Sound.class);
+    public static final AssetDescriptor<Sound> explosionSound = new AssetDescriptor("explosion.wav", Sound.class);
 }

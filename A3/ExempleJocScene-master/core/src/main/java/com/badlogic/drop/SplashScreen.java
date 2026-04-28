@@ -21,11 +21,18 @@ public class SplashScreen implements Screen {
     @Override
     public void show() {
         stage = new Stage(new FitViewport(800, 480));
-        splashTexture = new Texture(Gdx.files.internal("background.png")); // Using background as splash for now
+
+        // Intentar carregar splash.png, si no existeix usar background.png
+        if (Gdx.files.internal("splash.png").exists()) {
+            splashTexture = new Texture(Gdx.files.internal("splash.png"));
+        } else {
+            splashTexture = new Texture(Gdx.files.internal("background.png"));
+        }
+
         Image splashImage = new Image(splashTexture);
         splashImage.setSize(800, 480);
 
-        // Fade in and then go to MainMenu
+        // Efecte d'aparició i canvi a la pantalla principal
         splashImage.getColor().a = 0;
         splashImage.addAction(Actions.sequence(
             Actions.fadeIn(2f),
@@ -68,6 +75,6 @@ public class SplashScreen implements Screen {
     @Override
     public void dispose() {
         stage.dispose();
-        splashTexture.dispose();
+        if (splashTexture != null) splashTexture.dispose();
     }
 }
